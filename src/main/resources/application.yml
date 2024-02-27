@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: local
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/projetoBancario
+    username: root
+    password: admin
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+server:
+  error:
+    whitelabel:
+      enabled: false
+    include-message: always
+  port: 8080
