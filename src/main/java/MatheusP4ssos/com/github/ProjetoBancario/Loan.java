@@ -4,25 +4,29 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
-import jakarta.validation.OverridesAttribute;
+import jakarta.persistence.OneToMany;
+import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.mapping.List;
-
-import java.math.BigDecimal;
-
 
 @Data
-@Builder
 @Entity
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Conta {
-    private String Numero;
-    private BigDecimal Saldo;
-    private Persona cliente;
-    private List <Extrato> extratoList;
+public class Loan {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private Account conta;
+    private Integer installments;
+    private BigDecimal totalPrice;
+    private BigDecimal remainDebit;
+    private BigDecimal interestRates;
+
+
 }

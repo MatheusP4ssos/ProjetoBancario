@@ -1,28 +1,30 @@
 package MatheusP4ssos.com.github.ProjetoBancario;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
-import jakarta.validation.OverridesAttribute;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.mapping.List;
-
-import java.math.BigDecimal;
-import java.time.LocalDate;
-
 
 @Data
-@Builder
 @Entity
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Pix {
-    BigDecimal Valor;
-    LocalDate Data_de_Criacao;
-    Conta ContaOrigem;
-    String ChaveDestino;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private BigDecimal valor;
+    private LocalDateTime whenCreated;
+    private Account destinyAccount;
+    private String chaveDestino;
+
 }
