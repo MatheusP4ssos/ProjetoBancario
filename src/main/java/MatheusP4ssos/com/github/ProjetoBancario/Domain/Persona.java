@@ -1,4 +1,4 @@
-package MatheusP4ssos.com.github.ProjetoBancario;
+package MatheusP4ssos.com.github.ProjetoBancario.Domain;
 
 import MatheusP4ssos.com.github.ProjetoBancario.domain.enums.TypeKey;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -14,11 +14,14 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -51,13 +54,14 @@ public class Persona {
 
     @JsonIgnore
     @OneToMany(mappedBy = "persona")
-    private List<SavingAccount> savingAccounts = new ArrayList<>();
+    private List<CurrentAccount> currentAccounts = new ArrayList<>();
 
     @JsonIgnore
     @OneToMany(mappedBy = "persona")
-    private List<CurrentAccount> currentAccounts = new ArrayList<>();
+    private List<SavingAccount> savingAccounts = new ArrayList<>();
 
     @CPF
+    @NotNull
     private String cpf;
 
     private Integer typeKey;

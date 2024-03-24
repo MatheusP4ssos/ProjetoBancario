@@ -1,11 +1,18 @@
-package MatheusP4ssos.com.github.ProjetoBancario;
+package MatheusP4ssos.com.github.ProjetoBancario.Domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,8 +29,15 @@ public class Withdraw {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private BigDecimal valor;
+    @Column(name = "withdraw_value")
+    private BigDecimal value = new BigDecimal(0);
+
+    @JsonIgnore
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime whenExecuted;
-    private Account conta;
+
+    @ManyToOne
+    @JoinColumn(name = "currentAccount_id")
+    private CurrentAccount currentAccount;
 
 }

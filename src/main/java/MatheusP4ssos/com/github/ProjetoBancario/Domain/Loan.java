@@ -1,11 +1,12 @@
-package MatheusP4ssos.com.github.ProjetoBancario;
+package MatheusP4ssos.com.github.ProjetoBancario.Domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,15 +17,22 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Pix {
+public class Loan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private BigDecimal valor;
-    private LocalDateTime whenCreated;
-    private Account destinyAccount;
-    private String chaveDestino;
+    @ManyToOne
+    @JoinColumn(name = "currentAccount_id")
+    private CurrentAccount currentAccount;
+
+    private Integer installments;
+
+    private BigDecimal totalPrice;
+
+    private BigDecimal remainDebit;
+
+    private BigDecimal interestRates;
 
 }

@@ -1,4 +1,4 @@
-package MatheusP4ssos.com.github.ProjetoBancario;
+package MatheusP4ssos.com.github.ProjetoBancario.Domain;
 
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
