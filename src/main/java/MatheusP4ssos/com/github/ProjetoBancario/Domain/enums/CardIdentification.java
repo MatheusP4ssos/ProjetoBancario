@@ -1,5 +1,6 @@
 package MatheusP4ssos.com.github.ProjetoBancario.Domain.enums;
 
+import java.util.EnumSet;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

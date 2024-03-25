@@ -7,7 +7,7 @@ import java.util.EnumSet;
 
 @Getter
 @AllArgsConstructor
-public enum functionEmployee {
+public enum FunctionEmployee {
 
     VISA(0, "VISA CARD"),
     AMERICAN(1, "AMERICAN CARD"),
@@ -17,8 +17,8 @@ public enum functionEmployee {
     private int cod;
     private String descricao;
 
-    public static functionEmployee toEnum(Integer cod) {
-        return EnumSet.allOf(functionEmployee.class).stream()
+    public static FunctionEmployee toEnum(Integer cod) {
+        return EnumSet.allOf(FunctionEmployee.class).stream()
                 .filter(e -> e.getCod() == (cod))
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("Invalid Id: " + cod));
