@@ -1,6 +1,6 @@
-package MatheusP4ssos.com.github.ProjetoBancario.Domain;
+package domain;
 
-import MatheusP4ssos.com.github.ProjetoBancario.Domain.enums.TypeKey;
+import MatheusP4ssos.com.github.ProjetoBancario.enums.TypeKey;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -66,7 +66,7 @@ public class Persona {
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime whenCreated;
 
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+    @JsonFormat(pattern = "dd/MM/yyyy ")
     private LocalDateTime birthDay;
 
     @ElementCollection

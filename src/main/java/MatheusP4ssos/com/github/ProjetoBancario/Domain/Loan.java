@@ -1,4 +1,4 @@
-package MatheusP4ssos.com.github.ProjetoBancario.Domain;
+package domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

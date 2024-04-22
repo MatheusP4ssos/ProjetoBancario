@@ -1,6 +1,6 @@
-package MatheusP4ssos.com.github.ProjetoBancario.Domain;
+package domain;
 
-import MatheusP4ssos.com.github.ProjetoBancario.Domain.enums.CardIdentification;
+import MatheusP4ssos.com.github.ProjetoBancario.enums.CardIdentification;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
