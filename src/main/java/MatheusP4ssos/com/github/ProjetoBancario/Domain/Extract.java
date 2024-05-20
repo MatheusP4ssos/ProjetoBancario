@@ -1,5 +1,6 @@
-package domain;
+package MatheusP4ssos.com.github.ProjetoBancario.Domain;
 
+import MatheusP4ssos.com.github.ProjetoBancario.repository.SavingAccountRepository;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;

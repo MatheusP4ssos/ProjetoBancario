@@ -1,4 +1,4 @@
-package domain;
+package MatheusP4ssos.com.github.ProjetoBancario.Domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;

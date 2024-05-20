@@ -1,4 +1,4 @@
-package domain;
+package MatheusP4ssos.com.github.ProjetoBancario.Domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -16,22 +16,21 @@ import org.hibernate.validator.constraints.Length;
 @Data
 @Entity
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class BankingCheckbook {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Length(max =6, min = 6)
+    @Length(max = 6, min = 6)
     @Column(unique = true, nullable = false)
     private String number;
 
     @JsonIgnore
     @Column(name = "checkbook_value")
     private BigDecimal value = new BigDecimal(0);
-
 
     private Integer numberOfPages;
 

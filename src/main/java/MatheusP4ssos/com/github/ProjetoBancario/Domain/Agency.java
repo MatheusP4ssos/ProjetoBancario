@@ -1,4 +1,4 @@
-package domain;
+package MatheusP4ssos.com.github.ProjetoBancario.Domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -56,4 +57,9 @@ public class Agency {
     @OneToMany(mappedBy = "agency")
     private Set<SavingAccount> savingAccounts = new HashSet<>();
 
+    public Agency(String name, String number, String address) {
+        this.name = name;
+        this.number = number;
+        this.address = address;
+    }
 }

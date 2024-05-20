@@ -12,7 +12,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>LeoGuedex.com.github</groupId>
+    <groupId>MatheusP4ssos.com.github</groupId>
     <artifactId>ProjetoBancario</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>ProjetoBancario</name>
@@ -65,6 +65,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>3.2.0</version>
         </dependency>
     </dependencies>
 
